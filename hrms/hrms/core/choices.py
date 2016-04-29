@@ -20,6 +20,7 @@ departments = [
     ("HR", "Human Resource"),
     ("ADMIN", "Administration"),
     ("MARKETING", "Marketing"),
+    ("ACCOUNTS", "Accounts"),
 ]
 
 MANAGERS = {
