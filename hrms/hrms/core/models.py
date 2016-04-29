@@ -192,9 +192,9 @@ class Holiday (models.Model):
     @classmethod
     def upcoming (cls):
         today = datetime.date.today()
-        looktill = today + datetime.timedelta (days = 60)
+        #looktill = today + datetime.timedelta (days = 60)
 
-        return cls.objects.filter (falling_on__gt = today, falling_on__lt = looktill)
+        return cls.objects.filter (falling_on__gt = today).order_by ('falling_on')[:4]
 
     @classmethod
     def is_holiday_on (cls, idate):
