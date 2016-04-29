@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.forms import ModelForm
 
-from hrms.core.choices import LeaveTypes
+from hrms.core.choices import LeaveTypes, departments
 from hrms.core.models import UserProfile, Holiday
 from django.contrib.auth.models import User
 import datetime
@@ -59,7 +59,7 @@ class UserEditForm (ModelForm):
             'gender': forms.Select (choices = [("male","Male"), ("female", "Female")]),
             'actualdob': forms.SelectDateWidget(years=range(1950, 2000)),
             'documenteddob': forms.SelectDateWidget(years=range(1950, 2000)),
-            "department": forms.Select (choices = [("IT", "Information Technology")])
+            "department": forms.Select (choices = departments)
         }
 
 class UserForm (ModelForm):
