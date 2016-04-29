@@ -67,19 +67,17 @@
       <file leaf-file-name="su.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hrms/hrms/core/su.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="7.2222223">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-4.4444447">
+              <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="choices.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="choices.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hrms/hrms/core/choices.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21895862">
+            <state vertical-scroll-proportion="-6.0740743">
               <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
               <folding />
             </state>
@@ -89,8 +87,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hrms/hrms/core/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-58.11111">
-              <caret line="152" column="8" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
+            <state vertical-scroll-proportion="-16.11111">
+              <caret line="196" column="84" selection-start-line="196" selection-start-column="84" selection-end-line="196" selection-end-column="84" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -98,23 +96,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="suusers.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hrms/hrms/core/templates/suusers.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hrms/hrms/core/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.375">
-              <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-              <folding />
+            <state vertical-scroll-proportion="0.54072094">
+              <caret line="28" column="65" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="superuser.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hrms/hrms/core/templates/superuser.html">
+      <file leaf-file-name="leaves.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hrms/hrms/core/templates/leaves.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.25">
-              <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+            <state vertical-scroll-proportion="-13.75">
+              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
               <folding>
-                <marker date="1461923910000" expanded="true" signature="280:1181" placeholder="..." />
+                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#form#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,11 +141,9 @@
       <list>
         <option value="$PROJECT_DIR$/hrms/hrms/core/templates/sumaster.html" />
         <option value="$PROJECT_DIR$/hrms/hrms/urls.py" />
-        <option value="$PROJECT_DIR$/hrms/hrms/core/views.py" />
         <option value="$PROJECT_DIR$/hrms/hrms/core/templates/m.html" />
         <option value="$PROJECT_DIR$/hrms/hrms/core/templates/markdown.html" />
         <option value="$PROJECT_DIR$/hrms/hrms/core/templates/viewcalendar.html" />
-        <option value="$PROJECT_DIR$/hrms/hrms/core/templates/leaves.html" />
         <option value="$PROJECT_DIR$/hrms/hrms/core/templates/apply.html" />
         <option value="$PROJECT_DIR$/hrms/hrms/core/templates/account.html" />
         <option value="$PROJECT_DIR$/hrms/hrms/core/templates/index.html" />
@@ -159,9 +159,11 @@
         <option value="$PROJECT_DIR$/hrms/hrms/core/lib/__init__.py" />
         <option value="$PROJECT_DIR$/hrms/hrms/core/templates/login.html" />
         <option value="$PROJECT_DIR$/hrms/hrms/core/forms.py" />
-        <option value="$PROJECT_DIR$/hrms/hrms/core/models.py" />
         <option value="$PROJECT_DIR$/hrms/hrms/core/su.py" />
         <option value="$PROJECT_DIR$/hrms/hrms/core/choices.py" />
+        <option value="$PROJECT_DIR$/hrms/hrms/core/models.py" />
+        <option value="$PROJECT_DIR$/hrms/hrms/core/templates/leaves.html" />
+        <option value="$PROJECT_DIR$/hrms/hrms/core/views.py" />
       </list>
     </option>
   </component>
@@ -878,12 +880,12 @@
       <option name="number" value="Default" />
       <updated>1461664376862</updated>
       <workItem from="1461664378653" duration="3947000" />
-      <workItem from="1461670457041" duration="38436000" />
+      <workItem from="1461670457041" duration="39941000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42383000" />
+    <option name="totallyTimeSpent" value="43888000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1600" height="873" extended-state="6" />
@@ -1081,16 +1083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hrms/hrms/core/templates/leaves.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.087765954">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hrms/hrms/core/templates/timesheet.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13962767">
@@ -1191,16 +1183,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hrms/hrms/core/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66088116">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hrms/hrms/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.296297">
@@ -1211,49 +1193,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hrms/hrms/core/templates/superuser.html">
+    <entry file="file://$PROJECT_DIR$/hrms/hrms/core/choices.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.25">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-          <folding>
-            <marker date="1461923910000" expanded="true" signature="280:1181" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-6.0740743">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hrms/hrms/core/templates/suusers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.375">
+        <state vertical-scroll-proportion="0.77792555">
           <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hrms/hrms/core/su.py">
+    <entry file="file://$PROJECT_DIR$/hrms/hrms/core/templates/superuser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.2222223">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7180851">
+          <caret line="35" column="187" selection-start-line="35" selection-start-column="187" selection-end-line="35" selection-end-column="187" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1461923910000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hrms/hrms/core/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-58.11111">
-          <caret line="152" column="8" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="8" />
+        <state vertical-scroll-proportion="-16.11111">
+          <caret line="196" column="84" selection-start-line="196" selection-start-column="84" selection-end-line="196" selection-end-column="84" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hrms/hrms/core/choices.py">
+    <entry file="file://$PROJECT_DIR$/hrms/hrms/core/su.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21895862">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state vertical-scroll-proportion="-4.4444447">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hrms/hrms/core/templates/leaves.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#form#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hrms/hrms/core/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54072094">
+          <caret line="28" column="65" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
