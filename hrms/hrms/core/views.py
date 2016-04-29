@@ -26,7 +26,7 @@ def indexpage (request):
 @login_required
 def leavespage (request):
     user = request.user
-    if request.GET.has_key ("viewfor") and request.user.is_staff():
+    if request.GET.has_key ("viewfor") and request.user.is_staff:
         user = User.objects.get (id = request.GET.get ("viewfor"))
     this_year = datetime.datetime.today().year
     cl, total_cl, sl, total_sl, el, total_el, ml, zl = Leave.counts_of_user (user, this_year)
