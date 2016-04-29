@@ -17,7 +17,7 @@ def superuser (request):
 
     pending_requests = []
     for r in all_requests:
-        if r.user.userprofile.department in mydepts:
+        if r.user.userprofile.department in mydepts or request.user.is_superuser:
             pending_requests.append (r)
 
     return render (request, "superuser.html", locals())
