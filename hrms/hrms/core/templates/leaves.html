@@ -8,8 +8,21 @@
                             <div class="col-lg-6 col-md-6">
                                 <h3 class="page-header">Leave Management</h3>
                             </div>
-                            <div class="col-lg-6 col-md-6 text-right">
+                            <div class="col-lg-4 col-md-4 text-right">
                                 <a href="/leave/apply/" style="margin-top: 20px;" class="btn btn-sm btn-danger">Apply For Leave</a>
+                            </div>
+
+                            <div class="col-lg-2 col-md-2">
+                                {% if request.user.is_staff %}
+                                <form style="display: inline;" method="get">
+                                    <select name="viewfor" class="form-control" style="margin-top: 20px;" onchange="this.form.submit()">
+                                        <option value="0">Select a User to view</option>
+                                        {% for u in allusers %}
+                                        <option value="{{u.id}}">{{u.get_full_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </form>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ from django.contrib.auth import login, logout
 
 from hrms.core.forms import LoginForm, LeaveForm, PasswordForm
 from hrms.core.models import Leave, UserProfile, Holiday
+from django.contrib.auth.models import User
 
 import datetime
 import markdown, os
@@ -24,9 +25,13 @@ def indexpage (request):
 
 @login_required
 def leavespage (request):
+    user = request.user
+    if request.GET.has_key ("viewfor"):
+        user = User.objects.get (id = request.GET.get ("viewfor"))
     this_year = datetime.datetime.today().year
-    cl, total_cl, sl, total_sl, el, total_el, ml, zl = Leave.counts_of_user (request.user, this_year)
-    trackrecord = Leave.track_record_of_user (request.user, this_year)
+    cl, total_cl, sl, total_sl, el, total_el, ml, zl = Leave.counts_of_user (user, this_year)
+    trackrecord = Leave.track_record_of_user (user, this_year)
+    allusers = User.objects.all ()
 
     return render (request, "leaves.html", locals())
 
