@@ -1,0 +1,120 @@
+{% extends "master.html" %}
+
+{% block title %}Intranet and HRMS{% endblock %}
+
+{% block maincontent %}
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3 class="page-header">Welcome {{request.user.get_full_name}}: Dashboard</h3>
+                        </div>
+                    </div>
+                        <!-- /.row -->
+                    <div class="row">
+                        <div class="col-lg-2 col-md-3">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <div class="huge">{{cl}} CL</div>
+                                            <div>Total Casual Leaves : {{total_cl}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/leaves">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <div class="panel panel-green">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <div class="huge">{{sl}} SL</div>
+                                            <div>Total Sick Leaves : {{total_sl}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/leaves">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <div class="panel panel-yellow">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <div class="huge">{{el}} EL</div>
+                                            <div>Total Earned Leaves : {{total_el}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/leaves">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <div class="huge">{{ml}} ML</div>
+                                            <div>Total Maternity Leaves : n/a</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/leaves">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <div class="panel panel-red">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <div class="huge">{{zl}} ZL</div>
+                                            <div>Total Special Leaves : n/a</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/leaves">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+<h3>Upcoming Birthdays</h3>
+{% for u in upcomingbday %}
+<p>{{u.get_full_name}} / {{u.userprofile.actualdob|date:"dS M"}}</p>
+{% endfor %}
+
+<h3>Upcoming Holidays</h3>
+{% for h in upcomingholidays %}
+<p>{{h.name}} / {{h.falling_on|date:"dS M"}} </p>
+{% endfor %}
+{% endblock %}

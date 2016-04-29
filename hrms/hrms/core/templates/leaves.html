@@ -1,0 +1,136 @@
+{% extends "master.html" %}
+
+{% block title %}Intranet and HRMS{% endblock %}
+
+{% block maincontent %}
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-lg-6 col-md-6">
+                                <h3 class="page-header">Leave Management</h3>
+                            </div>
+                            <div class="col-lg-6 col-md-6 text-right">
+                                <a href="/leave/apply/" style="margin-top: 20px;" class="btn btn-sm btn-danger">Apply For Leave</a>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- /.row -->
+                    <div class="row">
+                        <div class="col-lg-2 col-md-3">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <div class="huge">{{cl}} CL</div>
+                                            <div>Total Casual Leaves : {{total_cl}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/leaves">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <div class="panel panel-green">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <div class="huge">{{sl}} SL</div>
+                                            <div>Total Sick Leaves : {{total_sl}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/leaves">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <div class="panel panel-yellow">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <div class="huge">{{el}} EL</div>
+                                            <div>Total Earned Leaves : {{total_el}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/leaves">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <div class="huge">{{ml}} ML</div>
+                                            <div>Total Maternity Leaves : n/a</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/leaves">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <div class="panel panel-red">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <div class="huge">{{zl}} ZL</div>
+                                            <div>Total Special Leaves : n/a</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/leaves">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+<h3>Detailed leave record of {{this_year}}</h3>
+<table class="table table-responsive table-striped table-hover">
+    <tr>
+        <th>Date</th>
+        <th>Leave Type</th>
+        <th>Burnt</th>
+        <th>Status</th>
+    </tr>
+    {% for leave in trackrecord %}
+    <tr>
+        <td>{{leave.date}}</td>
+        <td>{{leave.leave_type}}</td>
+        <td>{{leave.leave_part}}</td>
+        <td>{{leave.approval_status}}
+            {% ifnotequal leave.approval_status "pending" %} - by {{leave.approved_statuschange_by}} (on {{leave.approved_statuschange_on}}) {% endifnotequal %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

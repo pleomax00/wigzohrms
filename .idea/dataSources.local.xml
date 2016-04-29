@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - hrms@localhost" uuid="d47b6e0d-e917-40d8-a771-b6179fa893bc">
+      <secret-storage>master_key</secret-storage>
+      <user-name>shamailtayyab</user-name>
+      <schema-pattern>hrms.pg_catalog hrms.public</schema-pattern>
+      <default-schemas>hrms.pg_catalog hrms.public</default-schemas>
+    </data-source>
+  </component>
+</project>
