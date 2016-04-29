@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
 from django.contrib.auth.decorators import login_required
+from hrms.core.choices import get_departments
 
 from hrms.core.models import Leave, Holiday
 from hrms.core.forms import UserEditForm, UserForm, LeaveForm, HolidayForm
@@ -11,7 +12,13 @@ import datetime
 
 @login_required
 def superuser (request):
-    pending_requests = Leave.get_pending ()
+    all_requests = Leave.get_pending ()
+    mydepts = get_departments (request.user)
+
+    pending_requests = []
+    for r in all_requests:
+        if r.user.userprofile.department in mydepts:
+            pending_requests.append (r)
 
     return render (request, "superuser.html", locals())
 

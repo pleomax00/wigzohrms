@@ -1,4 +1,5 @@
 __author__ = 'shamailtayyab'
+from django.contrib.auth.models import User
 
 class LeaveTypes (object):
     CL = "CasualLeave"
@@ -20,3 +21,35 @@ departments = [
     ("ADMIN", "Administration"),
     ("MARKETING", "Marketing"),
 ]
+
+MANAGERS = {
+    "IT": ("atyab", "shamail"),
+    "SALES": ("vikrant", "himanshu", "umair"),
+    "OPERATIONS": ("himanshu", "umair"),
+    "HR": ("himamshu", "umair"),
+    "ADMIN": ("atyab", "shamail"),
+    "MARKETING": ("vikrant", "gaurav"),
+}
+
+def get_managers (foruser):
+    managers = MANAGERS[foruser.userprofile.department]
+    emails = []
+    for m in managers:
+        try:
+            user = User.objects.get (username = m)
+        except User.DoesNotExist:
+            print "Couldn't select", m
+            continue
+        emails.append (user.email)
+    print "Seleting managers", emails
+    return emails
+
+def get_departments (foradmin):
+    mydepts = set()
+    for dept, admins in MANAGERS.items():
+        for a in admins:
+            if foradmin.username == a:
+                mydepts.add (dept)
+
+    return list (mydepts)
+

@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.db.models import Q
 from django.conf import settings
-from hrms.core.choices import LeaveTypes
+from hrms.core.choices import LeaveTypes, get_managers
 from hrms.core.lib import wigzomail
 from decimal import Decimal
 import datetime
@@ -100,7 +100,7 @@ class Leave (models.Model):
             applied += 1
 
         if applied > 0:
-            wigzomail (settings.MANAGERS, "%s has applied for %d %s(s)." %(user.get_full_name(), applied, leave_type), body)
+            wigzomail (get_managers (user), "%s has applied for %d %s(s)." %(user.get_full_name(), applied, leave_type), body)
 
 
     @classmethod
