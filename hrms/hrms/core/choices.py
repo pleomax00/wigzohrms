@@ -29,6 +29,7 @@ MANAGERS = {
     "HR": ("himamshu", "umair"),
     "ADMIN": ("atyab", "shamail"),
     "MARKETING": ("vikrant", "gaurav"),
+    "ACCOUNTS": ("himanshu", "umair"),
 }
 
 def get_managers (foruser):
