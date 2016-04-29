@@ -18,4 +18,5 @@ departments = [
     ("OPERATIONS", "Operations"),
     ("HR", "Human Resource"),
     ("ADMIN", "Administration"),
+    ("MARKETING", "Marketing"),
 ]
