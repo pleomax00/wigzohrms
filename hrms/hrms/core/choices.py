@@ -29,7 +29,8 @@ MANAGERS = {
     "OPERATIONS": ("himanshu", "umair"),
     "HR": ("himamshu", "umair"),
     "ADMIN": ("atyab", "shamail"),
-    "MARKETING": ("vikrant", "gaurav"),
+    "MARKETING": ("vikrant", "himanshu", "umair"),
+    "DEVOPS": ("himanshu", "gaurav"),
     "ACCOUNTS": ("himanshu", "umair"),
 }
 
