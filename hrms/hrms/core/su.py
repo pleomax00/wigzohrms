@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from hrms.core.choices import get_departments
 
 from hrms.core.models import Leave, Holiday
@@ -10,7 +11,7 @@ from django.contrib.auth.models import User
 
 import datetime
 
-@login_required
+@staff_member_required
 def superuser (request):
     all_requests = Leave.get_pending ()
     mydepts = get_departments (request.user)
@@ -22,8 +23,17 @@ def superuser (request):
 
     return render (request, "superuser.html", locals())
 
+@staff_member_required
+def removeleave (request, leaveid):
+    #print userid, action
+    print request.META
+    leave = Leave.byId (leaveid)
+    if leave is None:
+        return HttpResponseRedirect ("/su/?action=nosuchleave")
+    leave.delete ()
+    return HttpResponseRedirect (request.GET.get ("next", "/"))
 
-@login_required
+@staff_member_required
 def leaveaction (request, leaveid, action):
     #print userid, action
     leave = Leave.byId (leaveid)
@@ -32,13 +42,13 @@ def leaveaction (request, leaveid, action):
     leave.approve (request.user, action)
     return HttpResponseRedirect ("/su/?action=done")
 
-@login_required
+@staff_member_required
 def users (request):
 
     users = User.objects.all ()
     return render (request, "suusers.html", locals())
 
-@login_required
+@staff_member_required
 def edituser (request, uid):
     user = User.objects.get (id = uid)
 
@@ -50,7 +60,7 @@ def edituser (request, uid):
         userform = UserEditForm (instance = user.userprofile)
     return render (request, "edituser.html", locals())
 
-@login_required
+@staff_member_required
 def createuser (request):
     if request.method == "POST":
         userform = UserForm (request.POST)
@@ -63,7 +73,7 @@ def createuser (request):
         userform = UserForm ()
     return render (request, "createuser.html", locals())
 
-@login_required
+@staff_member_required
 def filealeave (request):
     employees = User.objects.all ()
     if request.method == "POST":
@@ -80,7 +90,7 @@ def filealeave (request):
     return render (request, "filealeave.html", locals())
 
 
-@login_required
+@staff_member_required
 def calendar (request, year = None):
     if year is None:
         return HttpResponseRedirect ("/su/calendar/%d" % (datetime.date.today().year))
@@ -96,7 +106,7 @@ def calendar (request, year = None):
     holidays = Holiday.for_year (year)
     return render (request, "calendar.html", locals())
 
-@login_required
+@staff_member_required
 def rmcalendar (request, cid):
     holiday = Holiday.byId (cid)
     holiday.delete ()

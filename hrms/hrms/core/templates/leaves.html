@@ -134,6 +134,7 @@
         <th>Leave Type</th>
         <th>Burnt</th>
         <th>Status</th>
+        <th></th>
     </tr>
     {% for leave in trackrecord %}
     <tr>
@@ -142,6 +143,11 @@
         <td>{{leave.leave_part}}</td>
         <td>{{leave.approval_status}}
             {% ifnotequal leave.approval_status "pending" %} - by {{leave.approved_statuschange_by}} (on {{leave.approved_statuschange_on}}) {% endifnotequal %}
+        </td>
+        <td>
+            {% if request.user.is_staff %}
+            <a href="/su/rmleave/{{leave.id}}?next={{request.META.PATH_INFO}}?{{request.META.QUERY_STRING}}" class="btn btn-sm btn-danger">delete</a>
+            {% endif %}
         </td>
     </tr>
     {% endfor %}

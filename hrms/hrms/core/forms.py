@@ -54,11 +54,12 @@ class LeaveForm (forms.Form):
 class UserEditForm (ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['gender', 'address', 'pan', 'primary_phone', 'emergency_contact', 'actualdob', 'documenteddob', 'department']
+        fields = ['joiningdate', 'gender', 'address', 'pan', 'primary_phone', 'emergency_contact', 'actualdob', 'documenteddob', 'department']
         widgets = {
             'gender': forms.Select (choices = [("male","Male"), ("female", "Female")]),
             'actualdob': forms.SelectDateWidget(years=range(1950, 2000)),
             'documenteddob': forms.SelectDateWidget(years=range(1950, 2000)),
+            'joiningdate': forms.SelectDateWidget(years=range(2000, 2020)),
             "department": forms.Select (choices = departments)
         }
 

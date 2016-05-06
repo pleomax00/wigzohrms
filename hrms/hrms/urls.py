@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^accounts/login/', core.views.loginpage),
     url(r'^accounts/logout/', core.views.logoutpage),
 
+    url(r'^su/rmleave/(\d+)', core.su.removeleave),
     url(r'^su/leaveaction/(\d+)/(\w+)', core.su.leaveaction),
     url(r'^su/calendar/rm/(\d+)', core.su.rmcalendar),
     url(r'^su/calendar/(\d+)', core.su.calendar),
