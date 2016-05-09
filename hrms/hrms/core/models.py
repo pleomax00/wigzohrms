@@ -40,7 +40,7 @@ class UserProfile (models.Model):
             if lookfor < looktill and lookfor > today:
                 upcominghld.append ((profile.user, lookfor))
 
-        upcominghld = sorted(upcominghld, key = lambda x: x[1], reverse=True)
+        upcominghld = sorted(upcominghld, key = lambda x: x[1])
         upcominghld = map (lambda x: x[0], upcominghld)
         return upcominghld
 
