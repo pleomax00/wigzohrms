@@ -38,7 +38,7 @@ class UserProfile (models.Model):
             lookfor = datetime.date (today.year, profile.actualdob.month, profile.actualdob.day)
 
             if lookfor < looktill and lookfor > today:
-                upcominghld.append ((profile.user, looktill))
+                upcominghld.append ((profile.user, lookfor))
 
         upcominghld = sorted(upcominghld, key = lambda x: x[1], reverse=True)
         upcominghld = map (lambda x: x[0], upcominghld)
