@@ -34,9 +34,10 @@ MANAGERS = {
     "ACCOUNTS": ("himanshu", "umair"),
 }
 
-def get_managers (foruser):
+def get_managers (foruser, returnobj = False):
     managers = MANAGERS[foruser.userprofile.department]
     emails = []
+    mgrs = []
     for m in managers:
         try:
             user = User.objects.get (username = m)
@@ -44,7 +45,10 @@ def get_managers (foruser):
             print "Couldn't select", m
             continue
         emails.append (user.email)
+        mgrs.append (user)
     print "Seleting managers", emails
+    if returnobj:
+        return mgrs
     return emails
 
 def get_departments (foradmin):

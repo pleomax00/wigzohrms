@@ -20,6 +20,7 @@ def indexpage (request):
 
     upcomingbday = UserProfile.upcoming_birthdays()
     upcomingholidays = Holiday.upcoming ()
+    reporting_managers = request.user.userprofile.get_all_managers
 
     return render (request, "index.html", locals())
 

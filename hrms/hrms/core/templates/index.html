@@ -108,6 +108,13 @@
                     </div>
 
 
+<h3>Reporting Managers</h3>
+    {% for m in reporting_managers %}
+<p>
+    {{m.get_full_name}}
+</p>
+    {% endfor %}
+
 <h3>Upcoming Birthdays</h3>
 {% for u in upcomingbday %}
 <p>{{u.get_full_name}} / {{u.userprofile.actualdob|date:"dS M"}}</p>

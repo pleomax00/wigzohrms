@@ -44,6 +44,11 @@ class UserProfile (models.Model):
         upcominghld = map (lambda x: x[0], upcominghld)
         return upcominghld
 
+    @property
+    def get_all_managers (self):
+        mgrs = get_managers (self.user, True)
+        return mgrs
+
 
 def create_user_profile (sender, instance, created, **kwargs):
     if created:
