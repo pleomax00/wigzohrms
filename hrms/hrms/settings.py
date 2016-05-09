@@ -132,11 +132,14 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+s3_key_file = os.path.expanduser ("~/.s3keys")    # Format ACCESSKEY:SECRETKEY
+s3file_content = file (s3_key_file).read ().strip ()
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "email-smtp.us-east-1.amazonaws.com"
 EMAIL_PORT = 25
-EMAIL_HOST_USER = "AKIAJ2XKSPSOKPLJ3JDQ"
-EMAIL_HOST_PASSWORD = "AjFkRKykEs0wmIF4ry/8aXVZjb3CWtl2F3/naXklujCW"
+EMAIL_HOST_USER = s3file_content.split (":")[0]
+EMAIL_HOST_PASSWORD = s3file_content.split (":")[1]
 EMAIL_USE_TLS = True
 SERVER_EMAIL = "Wigzo Intranet <intranet@wigzo.io>"
 DEFAULT_FROM_EMAIL = "Wigzo Intranet <intranet@wigzo.io>"
