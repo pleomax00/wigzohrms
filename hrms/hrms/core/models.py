@@ -159,6 +159,8 @@ class Leave (models.Model):
         self.approved_statuschange_by = byuser
         self.approved_statuschange_on = datetime.datetime.today()
         self.save ()
+        body = "Hi %s,\n\nYour leave application on %s has been %s\n\nThanks\nWigzo Intranet" % (self.user.get_full_name(), str (self.date(), new_status))
+        wigzomail ([self.user.email], "Action taken on your leave application.", body)
 
     def print_balance (self):
         cl, total_cl, sl, total_sl, el, total_el, ml, zl = Leave.counts_of_user (self.user)
