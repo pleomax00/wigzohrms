@@ -159,7 +159,7 @@ class Leave (models.Model):
         self.approved_statuschange_by = byuser
         self.approved_statuschange_on = datetime.datetime.today()
         self.save ()
-        body = "Hi %s,\n\nYour leave application on %s has been %s\n\nThanks\nWigzo Intranet" % (self.user.get_full_name(), str (self.date, new_status))
+        body = "Hi %s,\n\nYour leave application on %s has been %s\n\nThanks\nWigzo Intranet" % (self.user.get_full_name(), str (self.date), new_status)
         wigzomail ([self.user.email], "Action taken on your leave application.", body)
 
     def print_balance (self):
