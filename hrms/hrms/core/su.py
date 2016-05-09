@@ -3,6 +3,8 @@ from django.http import HttpResponseRedirect
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import user_passes_test
+
 from hrms.core.choices import get_departments
 
 from hrms.core.models import Leave, Holiday
@@ -23,7 +25,7 @@ def superuser (request):
 
     return render (request, "superuser.html", locals())
 
-@staff_member_required
+@user_passes_test (lambda u: u.is_superuser)
 def removeleave (request, leaveid):
     #print userid, action
     print request.META

@@ -145,7 +145,7 @@
             {% ifnotequal leave.approval_status "pending" %} - by {{leave.approved_statuschange_by}} (on {{leave.approved_statuschange_on}}) {% endifnotequal %}
         </td>
         <td>
-            {% if request.user.is_staff %}
+            {% if request.user.is_superuser %}
             <a href="/su/rmleave/{{leave.id}}?next={{request.META.PATH_INFO}}?{{request.META.QUERY_STRING}}" class="btn btn-sm btn-danger">delete</a>
             {% endif %}
         </td>
