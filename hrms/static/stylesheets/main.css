@@ -16,3 +16,16 @@
     border: 1px solid black;
     padding: 2px 5px;
 }
+
+
+.wmarkdown ul li {
+    margin: 4px 10px;
+}
+
+.wmarkdown h3 {
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    text-transform: uppercase;
+    background: #eee;
+    padding: 5px 10px;
+}

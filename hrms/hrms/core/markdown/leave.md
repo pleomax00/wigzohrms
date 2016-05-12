@@ -24,7 +24,7 @@ written (email), he/he is required to send a message to his/her supervisor and H
 * For more than two days of sick leave, employee is required to submit a medical certificate. Unplanned sick leaves for serious medical illness will be granted on managements
 discretion. However, you must inform your reporting manager prior to your reporting time.
 
-### ATTENDANCE:
+### ATTENDANCE
 * Every employee is required to complete working_days * 9 hours in a month, which includes the break timings of 30 minutes.
 * Please note that everyone in the office has to punch their attendance in the biometric machine, for in and out time record.
 * If an employee does not punch their attendance for in and out timings, they will be given a warning via email. If he/she repeats the case twice, then a half day will be deducted from the leave balance.
