@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 
-from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import user_passes_test
+from django.conf import settings
 
 from hrms.core.choices import get_departments
 
@@ -12,6 +12,8 @@ from hrms.core.forms import UserEditForm, UserForm, LeaveForm, HolidayForm
 from django.contrib.auth.models import User
 
 import datetime
+import os
+import markdown
 
 @staff_member_required
 def superuser (request):
@@ -114,3 +116,34 @@ def rmcalendar (request, cid):
     holiday.delete ()
     next = request.GET.get ("next", datetime.datetime.today().year)
     return HttpResponseRedirect ("/su/calendar/%s?action=deleted" % (str (next)))
+
+@staff_member_required
+def editor (request):
+    artile_list = os.listdir (settings.MARKDOWN_PATH)
+    articles = filter (lambda x: x.endswith (".md"), artile_list)
+    articles = map (lambda x: x.split (".")[0], articles)
+
+    return render (request, "editor.html", locals())
+
+@staff_member_required
+def edit_page (request, pagename):
+    article = os.path.join (settings.MARKDOWN_PATH, pagename+".md")
+    try:
+        content = file (article).read ()
+    except IOError:
+        content = ""
+
+    if request.method == "POST":
+        content = request.POST.get ("markdown")
+        content = ''.join(i for i in content if ord(i)<128)
+        file (article, "w").write(content)
+
+    preview = markdown.markdown(content, extensions = ['markdown.extensions.tables'])
+
+    return render (request, "edit_page.html", locals())
+
+@staff_member_required
+def preview_markdown (request):
+    body = request.POST.get ("markdown", "")
+    preview = markdown.markdown(body, extensions = ['markdown.extensions.tables'])
+    return HttpResponse (preview)

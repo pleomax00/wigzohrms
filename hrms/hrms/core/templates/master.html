@@ -5,7 +5,11 @@
         <title>{% block title %}{% endblock %} - Wigzo</title>
         <link rel="stylesheet" media="screen" href="/static/stylesheets/main.css">
         <link rel="shortcut icon" type="image/png" href="/static/images/favicon.ico">
-        <script src="/static/javascripts/hello.js" type="text/javascript"></script>
+        <script src="/static/javascripts/django.js" type="text/javascript"></script>
+        <script src="/static/javascripts/jquery-1.10.2.js" type="text/javascript"></script>
+
+        {% block extrajs %}{% endblock %}
+        {% block extracss %}{% endblock %}
     </head>
     <body>
         

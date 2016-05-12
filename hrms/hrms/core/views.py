@@ -63,8 +63,8 @@ def policies (request, pagename):
     index_path = os.path.join (settings.MARKDOWN_PATH, "toc.md")
     content_path = os.path.join (settings.MARKDOWN_PATH, pagename+".md")
 
-    index = markdown.markdown(file (index_path).read())
-    content = markdown.markdown(file (content_path).read())
+    index = markdown.markdown(file (index_path).read(), extensions = ['markdown.extensions.tables'])
+    content = markdown.markdown(file (content_path).read(), extensions = ['markdown.extensions.tables'])
 
     return render (request, "markdown.html", locals())
 

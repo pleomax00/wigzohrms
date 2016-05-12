@@ -1,0 +1,18 @@
+.wmarkdown {
+    padding-bottom: 40px;
+}
+.wmarkdown table {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.wmarkdown table tr th {
+    background: #ccc;
+    text-transform: capitalize;
+    color: black;
+    border: 1px solid black;
+    padding: 2px 5px;
+}
+.wmarkdown table tr td {
+    border: 1px solid black;
+    padding: 2px 5px;
+}
